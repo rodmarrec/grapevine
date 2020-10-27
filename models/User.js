@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const userSchema = new mongoose.Schema(
     {
         fullName: { type: String, required: [true, 'You must enter a full name' ] },
@@ -10,8 +11,18 @@ const userSchema = new mongoose.Schema(
         photo: { type: Buffer, default: 'https://imgur.com/7OXMxkE' },
         summary: { type: String },
         userType: { type: String },
-        connections: [],
-        pendingRequest: [],
+        connections: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'PendingRequest'
+            },
+        ],
+        pendingRequest: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'User'
+            },
+        ],
     }
 );
 

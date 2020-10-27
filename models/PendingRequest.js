@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const PendingRequest = new mongoose.Schema(
+const pendingRequestSchema = new mongoose.Schema(
     {
         introduction: { type: String, required: false },       
     },
@@ -10,6 +10,6 @@ const PendingRequest = new mongoose.Schema(
 );
 
 
-const PendingRequest = mongoose.model('PendingRequest', PendingRequest);
+const PendingRequest = mongoose.model('PendingRequest', pendingRequestSchema);
 
-module.exports = PendingRequest;
+module.exports = pendingRequest;
