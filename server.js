@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 
 // internal imports
 const db = require('./models');
-const controllers = require('./controllers');
+const routes = require('./routes');
 
 const PORT = process.env.PORT || 4000;
 const app = express();
@@ -24,9 +24,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Views routes
 app.get('/', function (req, res) {
-    res.render('index');
+    res.render('landing');
 });
 
+app.use('/profile', routes.profile)
 
 
 

@@ -6,6 +6,7 @@ const pendingRequestSchema = new mongoose.Schema(
     },
     {
         timestamps: true,
+        createdAt: 'sentOn',
     }
 );
 
