@@ -12,4 +12,4 @@ const pendingRequestSchema = new mongoose.Schema(
 
 const PendingRequest = mongoose.model('PendingRequest', pendingRequestSchema);
 
-module.exports = pendingRequest;
+module.exports = PendingRequest;
