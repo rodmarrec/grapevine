@@ -28,18 +28,7 @@ app.get('/', function (req, res) {
 });
 
 
-// User routes
-app.get('/users', (req, res) => {
-    db.User.find({}, (error, foundUsers) => {
-        if (error) return res.send(error);
 
-        const context = {
-            users : foundUsers
-        }
-
-        res.render('user/index', context)
-    })
-})
 
 
 
