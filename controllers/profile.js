@@ -14,31 +14,31 @@ const index = (req, res) => {
         const context = {
             profiles: foundProfiles
         };
-
-        res.render('profile/profile', context)
+        res.render('profile/index', context)
     });
 };
 
 //new
-router.get("/new", function (req, res) {
-    db.Profile.find({}, function (error, foundProfiles) {
+const create = (req, res) => {
+    db.Profile.find({}, (error, foundProfile) => {
         if (error) return res.send(error);
+
         const context = {
-        profiles: foundProfiles,
+            profile: foundProfile,
         };
         res.render("profile/new", context);
     });
-});
+};
+
+//show
+const show = (req,res) =>{
+    return res.send('profile show')  
+}
 
 //create
 router.post('/', function(req,res){
 	return res.send('profile create') 
 	return res.send({route: "Create", body: req.body}) 
-})
-
-//show
-router.get('/:id', function(req,res){
-	return res.send('profile show')  
 })
 
 //edit
