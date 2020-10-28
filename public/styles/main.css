@@ -1,6 +1,15 @@
+/*
+font-family: 'Staatliches', cursive;
+
+*/
+
 body {
   background-color: rgb(66, 66, 66);
 }
+
+/* .navbar-font {
+  font-family: "Staatliches", cursive;
+} */
 
 .main {
   min-height: 80vh;

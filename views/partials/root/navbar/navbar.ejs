@@ -1,0 +1,62 @@
+
+<nav class="navbar navbar-expand-lg  card-header" />
+
+
+<!--ANCHOR * navbar LEFT SIDE * -->
+
+    <div class="collapse navbar-collapse" 
+    id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+            <!--SECTION logo -->
+            <%- include("./items-logo.ejs") -%>
+
+            <!--SECTION Home -->
+            <li class="nav-item active ">
+                <a class="nav-link text-light" 
+                    href="#"> 
+                    Home 
+                    <span class="sr-only"> 
+                        (current) 
+                    </span>
+                </a>
+            </li>
+
+            <!--SECTION Link -->
+            <li class="nav-item">
+                <a class="nav-link text-light" 
+                    href="#">
+                    Link
+                </a>
+            </li>
+
+            <!-- SECTION Dropdown Menu -->
+            <%- include("./items-dropdown.ejs") -%> 
+        </ul>
+    </div>
+
+<!--ANCHOR * navbar RIGHT SIDE * -->
+    <div class="nav-bar ml-auto" id="navbarMenu">
+        <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+                <a href="{% url 'logout' %}"><button type="submit" class="bttn-unite bttn-md bttn-warning bttn-no-outline">Log
+                        Out</button></a>
+            </li>
+
+            <li class="nav-item" style="padding: 5px;">
+                <button class="bttn-unite bttn-md bttn-success bttn-no-outline" data-toggle="modal"
+                    data-target="#signupModal">Register</button>
+            </li>
+
+            <li class="nav-item" style="padding: 5px;">
+                <button class="bttn-unite bttn-md bttn-warning bttn-no-outline" data-toggle="modal" data-target="#loginModal">Log
+                    In</button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- SECTION Modal- Signup -->
+    <%- include("./items-signup-modal.ejs") -%>
+
+</nav>

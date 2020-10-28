@@ -20,9 +20,15 @@ const index = (req, res) => {
 };
 
 //new
-router.get('/new', function(req,res){
-	return res.send('profile new') 
-})
+router.get("/new", function (req, res) {
+    db.Profile.find({}, function (error, foundProfiles) {
+        if (error) return res.send(error);
+        const context = {
+        profiles: foundProfiles,
+        };
+        res.render("profile/new", context);
+    });
+});
 
 //create
 router.post('/', function(req,res){
