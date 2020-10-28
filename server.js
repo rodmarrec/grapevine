@@ -7,16 +7,14 @@ const methodOverride = require('method-override');
 const db = require('./models');
 const routes = require('./routes');
 
-const PORT = process.env.PORT || 4000;
+// instanced modules
 const app = express();
 
-
-/* Configuration */
-
+// configuration
+const PORT = process.env.PORT || 4000;
 app.set('view engine', 'ejs'); 
 
-
-/* Middleware */
+// middleware
 app.use(express.static(path.join(__dirname, "public")));
 
 
