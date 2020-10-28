@@ -4,12 +4,16 @@ font-family: 'Staatliches', cursive;
 */
 
 body {
-  background-color: rgb(66, 66, 66);
+  background-color: rgb(146, 117, 173);
 }
 
 /* .navbar-font {
   font-family: "Staatliches", cursive;
 } */
+
+#logo-name {
+  color: #7534ca;
+}
 
 .main {
   min-height: 80vh;

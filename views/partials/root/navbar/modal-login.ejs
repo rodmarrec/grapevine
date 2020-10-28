@@ -1,0 +1,86 @@
+<div class="modal fade" 
+    id="loginModal" 
+    tabindex="-1" 
+    role="dialog" 
+    aria-labelledby="loginModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" 
+        role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <!--STUB modal title -->
+                <h5 class="content has-text-centered">
+                    Find your next opportunity through Grapevine
+                </h5>
+                <button type="button" 
+                    class="close" 
+                    data-dismiss="modal" 
+                    aria-label="Close">
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+            </div>
+
+            <!--STUB  error message -->
+            <!-- <div class="alert alert-danger" 
+                role="alert"> error
+            </div> -->
+
+            <!--STUB register form  -->
+            <form method="POST" action={% url 'register'%}>
+                <div class="modal-body">
+
+
+                    <!-- STUB email -->
+                    <p>
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" name="email" maxlength="25" minlength="2"
+                            placeholder="name@email.com" required>
+                    </p>
+
+                    <!-- STUB password -->
+                    <p>
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" name="password" maxlength="25" minlength="4"
+                            placeholder="25 characters max. 4 characters min required." required>
+                    </p>
+
+                    <!-- STUB confirm password -->
+                    <p>
+                        <label for="password2">Confirm Password:</label>
+                        <input type="password" class="form-control" name="password2" maxlength="25" minlength="4"
+                            placeholder="Re-Enter Your Password" required>
+                    </p>
+
+                    <!-- STUB modal footer -->
+                    <div class="modal-footer">
+
+                        <!--STUB Existing Member -->
+                        <p class="subtitle has-text-grey modal-dialog">
+                            Already have an account?
+                            <a href="/login" class="button is-link">
+                                Log in
+                            </a>
+                        </p>
+
+                        <!-- STUB close button -->
+                        <button type="button" 
+                            class="btn btn-secondary" data-dismiss="modal">
+                            Cancel
+                        </button>
+
+                        <!-- STUB sign up button -->
+                        <button type="submit" class="btn btn-info">
+                            Join
+                        </button <input type="hidden" name="next" value="{{ next }}">
+
+                    </div>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
