@@ -3,9 +3,8 @@ const mongoose = require("mongoose");
 
 const profileSchema = new mongoose.Schema(
     {
-        fullName: { type: String, required: [true, "You must enter a full name" ] },
-        email: { type: String, required: [true, "You must enter an email"] },
-        password: { type: String, required: [true, "You must enter a password" ] },
+        fullName: { type: String, required: 
+            [true, "You must enter your First and Last Name" ] },
         jobTitle: { type: String, default: "open to work" },
         company: { type: String, default: "n/a" },
         photo: { type: Buffer, default: "https://imgur.com/7OXMxkE" },

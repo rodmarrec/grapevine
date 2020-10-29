@@ -24,4 +24,5 @@ mongoose
 module.exports = {
     Profile: require("./Profile"),
     Invitation: require("./Invitation"),
+    User: require("./User")
 };
