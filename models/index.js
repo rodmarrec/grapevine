@@ -19,5 +19,5 @@ mongoose
 
 module.exports = {
     Profile: require('./Profile'),
-    // PendingRequests: require('./PendingRequest'),
+    // Invitations: require('./Invitation'),
 };

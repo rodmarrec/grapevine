@@ -14,10 +14,10 @@ const profileSchema = new mongoose.Schema(
         connections: [
             {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: 'PendingRequest'
+                ref: 'Invitation'
             },
         ],
-        pendingRequest: [
+        invitation: [
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'Profile'

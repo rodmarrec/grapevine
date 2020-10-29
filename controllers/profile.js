@@ -6,22 +6,11 @@ const db = require('../models')
 // base route is /profile
 
 
-//index
-const index = (req, res) => {
-    db.Profile.find({}, (error, foundProfiles) => {
-        if (error) return res.send(error);
-
-        const context = {
-            profiles: foundProfiles
-        };
-        res.render('profile/index', context)
-    });
-};
 
 //show
 const show = (req, res) => {
         db.Profile.findById(req.params.id)
-        .populate("profile")
+        .populate("invitations")
         .exec((error, foundProfile) => {
             if (error) {
                 console.log(error);
@@ -31,7 +20,7 @@ const show = (req, res) => {
         const context = { 
             Profile: foundProfile 
         };
-        res.render("profile/show", context);
+        res.render(`profile/home/${foundProfile._id}`, context);
     });
 };
 
@@ -44,24 +33,24 @@ const create = (req, res) => {
         const context = {
             profile: foundProfile,
         };
-        res.render("profile/new", context);
+        res.render("profile/home", context);
     });
 };
 
 
 // update
 const update = (req, res) => {
-        db.Brewery.findByIdAndUpdate(
+        db.Profile.findByIdAndUpdate(
         req.params.id,
         req.body,
         { new: true },
-        (error, updatedBrewery) => {
+        (error, updatedProfile) => {
             if (error) {
             console.log(error);
             return res.send(error);
             }
     
-            res.redirect(`/breweries/${updatedBrewery._id}`);
+            res.redirect(`/profile/home/${updatedProfile._id}`);
         }
         );
     };
@@ -70,7 +59,6 @@ const update = (req, res) => {
 
 
 module.exports = {
-    index,
     show,
     create,
     update,
