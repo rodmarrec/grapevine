@@ -52,8 +52,8 @@ const create = (req, res) => {
         }
         db.Profile.findById(req.body.profile, function (error, foundProfile) {
             if (error) {
-            console.log("Error in Invitation-Profile#create:", error);
-            return res.send("Error in Invitation-Profile#create:", error);
+                console.log("Error in Invitation-Profile#create:", error);
+                return res.send("Error in Invitation-Profile#create:", error);
             }
             console.log("profile found:", foundProfile);
             foundProfile.Invitations.push(createdInvitation);
@@ -68,9 +68,7 @@ const create = (req, res) => {
 // update
 const update = (req, res) => {
     db.Invitation.findByIdAndUpdate(req.params.id, req.body, { new: true }, (
-        error,
-        updatedInvitation
-        ) => {
+        error, updatedInvitation) => {
         if (error) {
             console.log("Error in invitation#update:", error);
             return res.send("Error in invitation#update:", error);
@@ -91,8 +89,8 @@ const destroy = (req, res) => {
     
         db.Profile.findById(deletedInvitation.profile, function (error, foundProfile) {
             if (error) {
-            console.log("Error in Invitation-Profile#destroy:", error);
-            return res.send("Error in Invitation-Profile#destroy:", error);
+                console.log("Error in invitation-Profile#destroy:", error);
+                return res.send("Error in invitation-Profile#destroy:", error);
             }
             
             console.log("profile found:", foundProfile);
