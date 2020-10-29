@@ -55,7 +55,26 @@ const update = (req, res) => {
         );
     };
 
-
+// delete
+const destroy = (req, res) => {
+    db.Profile.findByIdAndDelete(req.params.id, (error, deletedProfile) => {
+        if (error) {
+            console.log(error);
+            return res.send(error);
+        }
+    
+        db.Invitation.deleteOne({ profile: deletedProfile._id }, (
+            error,
+            removedInvitations
+        ) => {
+            if (error) {
+            console.log(error);
+            return res.send(error);
+            }
+            res.redirect("/breweries");
+        });
+    });
+};
 
 
 module.exports = {
