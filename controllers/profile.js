@@ -6,6 +6,19 @@ const db = require("../models")
 // base route is /profile
 
 
+// index
+const index = (req, res) => {
+    db.Profile.find({}, (error, foundProfiles) => {
+        if (error) return res.send(error);
+    
+        const context = {
+            profiles: foundProfiles,
+        };
+        res.render("profiles/show-all", context);
+    });
+};
+
+
 //show
 const show = (req, res) => {
         db.Profile.findById(req.params.id)
@@ -26,13 +39,13 @@ const show = (req, res) => {
 
 //create
 const create = (req, res) => {
-    db.Profile.find({}, (error, foundProfile) => {
+    db.Profile.find({}, (error, newProfile) => {
         if (error) return res.send(error);
 
         const context = {
-            profile: foundProfile,
+            profile: newProfile,
         };
-        res.render("profile/home", context);
+        res.render(`profile/home/${newProfile._id}`, context);
     });
 };
 
@@ -71,13 +84,14 @@ const destroy = (req, res) => {
             console.log(error);
             return res.send(error);
             }
-            res.redirect("/profile");
+            res.redirect("/landing");
         });
     });
 };
 
 
 module.exports = {
+    index,
     show,
     create,
     update,
