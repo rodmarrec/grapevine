@@ -4,7 +4,7 @@ font-family: "Staatliches", cursive;
 */
 
 body {
-  background-color: rgb(146, 117, 173);
+  background-color: rgb(108, 0, 209);
 }
 
 /* .navbar-font {
@@ -13,6 +13,10 @@ body {
 
 #logo-name {
   color: #7534ca;
+}
+
+.landing-nav-header {
+  background-color: rgba(245, 245, 245, 0.952);
 }
 
 .main {
