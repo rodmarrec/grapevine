@@ -56,13 +56,13 @@ app.get("/", function (req, res) {
 });
 
 // auth
-app.use("/", controllers.auth);
+app.use("/", routes.auth);
 
 //invitation auth routes
-app.use("/invitations", authRequried, controllers.invitation);
+app.use("/invitations", authRequried, routes.invitation);
 
 // profile routes
-app.use("/profiles", authRequried, controllers.profile);
+app.use("/profiles", authRequried, routes.profile);
 
 
 
