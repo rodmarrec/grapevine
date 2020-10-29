@@ -4,7 +4,7 @@ font-family: "Staatliches", cursive;
 */
 
 body {
-  background-color: #150485;
+  background-color: rgb(146, 117, 173);
 }
 
 /* .navbar-font {
@@ -12,7 +12,7 @@ body {
 } */
 
 #logo-name {
-  color: #c62a88;
+  color: #7534ca;
 }
 
 .main {

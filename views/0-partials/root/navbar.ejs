@@ -1,6 +1,5 @@
 
-<nav class="navbar navbar-expand-lg card-header" 
-    id="logo-name"/>
+<nav class="navbar navbar-expand-lg card-header" />
 
 <!--ANCHOR * navbar LEFT SIDE * -->
 
@@ -9,12 +8,12 @@
         <ul class="navbar-nav mr-auto">
 
         <!--STUB logo -->
-            <%- include("./brand-name.ejs") -%>
+            <%- include("./navbar/brand-name.ejs") -%>
 
         <!--STUB Home link -->
             <li class="nav-item active ">
                 <a class="nav-link text-light" 
-                    href="#"> 
+                    href="/"> 
                     Home 
                     <span class="sr-only"> 
                         (current) 
@@ -23,7 +22,7 @@
             </li>
 
         <!---STUB Dropdown Menu -->
-            <%- include("./dropdown-menu.ejs") -%> 
+            <%- include("./navbar/dropdown-menu.ejs") -%> 
         </ul>
     </div>
 
@@ -67,9 +66,9 @@
     </div>
 
 <!---STUB Modal- register -->
-    <%- include("./modal-register.ejs") -%>
+    <%- include("./navbar/modal-register.ejs") -%>
 
 <!-- STUB Modal- log in -->
-    <%- include("./modal-login.ejs") -%>
+    <%- include("./navbar/modal-login.ejs") -%>
 
 </nav>
