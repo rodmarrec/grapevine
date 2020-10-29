@@ -1,3 +1,4 @@
 module.exports = {
-    profile: require('./profile'),
+    profile: require("./profile"),
+    invitation: require("./invitation")
 };

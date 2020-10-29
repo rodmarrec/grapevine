@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const inviteSchema = new mongoose.Schema(
     {
@@ -6,11 +6,11 @@ const inviteSchema = new mongoose.Schema(
     },
     {
         timestamps: true,
-        createdAt: 'sentOn',
-    }
+        createdAt: "sentOn",
+    },
 );
 
 
-const Invite = mongoose.model('Invite', inviteSchema);
+const Invite = mongoose.model("Invite", inviteSchema);
 
 module.exports = Invite;

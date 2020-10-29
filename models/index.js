@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 // connection string
 // require("dotenv").config();
 const connectionString =
-    process.env.MONGODB_URI || 'mongodb://localhost:27017/grapevine';
+    process.env.MONGODB_URI || "mongodb://localhost:27017/grapevine";
 const configOptions = {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -18,6 +18,6 @@ mongoose
 
 
 module.exports = {
-    Profile: require('./Profile'),
-    // Invitations: require('./Invitation'),
+    Profile: require("./Profile"),
+    Invitation: require("./Invitation"),
 };

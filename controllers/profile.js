@@ -1,10 +1,9 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const db = require('../models')
+const db = require("../models")
 
 // base route is /profile
-
 
 
 //show
@@ -52,8 +51,9 @@ const update = (req, res) => {
     
             res.redirect(`/profile/home/${updatedProfile._id}`);
         }
-        );
-    };
+    );
+};
+
 
 // delete
 const destroy = (req, res) => {
@@ -71,7 +71,7 @@ const destroy = (req, res) => {
             console.log(error);
             return res.send(error);
             }
-            res.redirect("/breweries");
+            res.redirect("/profile");
         });
     });
 };

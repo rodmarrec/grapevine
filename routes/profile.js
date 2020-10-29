@@ -1,13 +1,13 @@
 //  imports
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { profile } = require('../controllers')
+const { profile } = require("../controllers")
 
 //  routes
-router.get('/:id', profile.show);
-router.post('/', profile.create);
-router.put('/:id', profile.update);
-router.delete('/:id', profile.destroy);
+router.get("/:id", profile.show);
+router.post("/", profile.create);
+router.put("/:id", profile.update);
+router.delete("/:id", profile.destroy);
 
 
 //  exports
