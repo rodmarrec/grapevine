@@ -17,7 +17,7 @@ const app = express();
 
 // configuration
 require("dotenv").config();
-console.log(process.env);
+// console.log(process.env);
 const PORT = process.env.PORT || 4000;
 app.set("view engine", "ejs"); 
 
@@ -50,19 +50,33 @@ const authRequried = function (req, res, next) {
 
 
 //// routes
-// views 
-app.get("/", function (req, res) {
+// landing page route
+app.get("/", (req, res) => {
     res.render("landing",{ user: req.session.currentUser });
 });
 
-// auth
-// app.use("/", routes.auth);
+// profile page route
+app.get("/profile", (req, res) => {
+    res.render("profile/home",{ user: req.session.currentUser });
+});
 
-// //invitation auth routes
-// app.use("/invitations", authRequried, routes.invitation);
+// search all profiles route
+app.get("/search", (req, res) => {
+    res.render("profile/show-all",{ user: req.session.currentUser });
+});
 
-// // profile routes
-// app.use("/profiles", authRequried, routes.profile);
+// mailbox page route
+app.get("/mailbox", (req, res) => {
+    res.render("invitation/mailbox",{ user: req.session.currentUser });
+});
+
+
+// auth routes
+//invitation auth routes
+app.use("/invitations", authRequried, routes.invitation);
+
+// profile routes
+app.use("/profile", authRequried, routes.profile);
 
 
 

@@ -8,13 +8,17 @@ const configOptions = {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
-  useFindAndModify: false,
+  useFindAndModify: true,
 };
 
 mongoose
   .connect(connectionString, configOptions)
-  .then(() => console.log("MongoDB successfully connected..."))
+  .then(() => console.log("MongoDB connected..."))
   .catch((err) => console.log(`MongoDB connection error: ${err}`));
+
+  mongoose.connection.on('disconnected', (event) => {
+    console.log('Mongodb disconnected', event);
+  });
 
 
 module.exports = {
