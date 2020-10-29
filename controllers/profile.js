@@ -18,7 +18,25 @@ const index = (req, res) => {
     });
 };
 
-//new
+//show
+const show = (req, res) => {
+        db.Profile.findById(req.params.id)
+        .populate("profile")
+        .exec((error, foundProfile) => {
+            if (error) {
+                console.log(error);
+                return res.send(error);
+            }
+    
+        const context = { 
+            Profile: foundProfile 
+        };
+        res.render("profile/show", context);
+    });
+};
+
+
+//create
 const create = (req, res) => {
     db.Profile.find({}, (error, foundProfile) => {
         if (error) return res.send(error);
@@ -30,32 +48,31 @@ const create = (req, res) => {
     });
 };
 
-//show
-const show = (req,res) =>{
-    return res.send('profile show')  
-}
 
-//create
-router.post('/', function(req,res){
-	return res.send('profile create') 
-	return res.send({route: "Create", body: req.body}) 
-})
+// update
+const update = (req, res) => {
+        db.Brewery.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true },
+        (error, updatedBrewery) => {
+            if (error) {
+            console.log(error);
+            return res.send(error);
+            }
+    
+            res.redirect(`/breweries/${updatedBrewery._id}`);
+        }
+        );
+    };
 
-//edit
-router.get('/:id/edit', function(req,res){
-	return res.send('profile edit')  
-})
 
-//update
-router.put('/:id', function(req,res){
-	return res.send('profile update')  
-})
 
-//delete
-router.delete('/:id', function(req,res){
-	return res.send('profile delete')  
-})
 
 module.exports = {
     index,
+    show,
+    create,
+    update,
+    destroy,
 }
