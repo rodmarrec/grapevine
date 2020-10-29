@@ -11,6 +11,7 @@ const profileSchema = new mongoose.Schema(
         photo: { type: Buffer, default: "https://imgur.com/7OXMxkE" },
         summary: { type: String },
         profileType: { type: String },
+        
         network: [
             {
                 type: mongoose.Schema.Types.ObjectId,
