@@ -4,6 +4,9 @@ body {
   background-color: rgba(245, 245, 245, 0.952);
 }
 
+.main {
+  min-height: 80vh;
+}
 
 
 /* STUB navbar */
@@ -21,9 +24,6 @@ body {
 
 /*STUB Landing Page */
 
-.jumbotron-body {
-  background-color: rgba(245, 245, 245, 0.952);
-}
 
 #undraw {
   width: 175%;
@@ -61,6 +61,3 @@ body {
   height: 30px;
 }
 
-.main {
-  min-height: 80vh;
-}

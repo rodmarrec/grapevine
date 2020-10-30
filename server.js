@@ -43,13 +43,14 @@ app.use(
 
 const authRequried = function (req, res, next) {
     if (!req.session.currentUser) {
-        return res.redirect("/landing");
+        return res.redirect("/login");
     }
     next();
 };
 
 
-//// routes
+//// views routes
+
 // landing page route
 app.get("/", (req, res) => {
     res.render("landing",{ user: req.session.currentUser });
@@ -71,7 +72,10 @@ app.get("/mailbox", (req, res) => {
 });
 
 
-// auth routes
+
+//// auth routes
+app.use("/", routes.auth);
+
 //invitation auth routes
 app.use("/invitations", authRequried, routes.invitation);
 
