@@ -23,6 +23,11 @@ body {
   background-color: rgba(245, 245, 245, 0.952);
 }
 
+#undraw {
+  width: 175%;
+  height: auto;
+}
+
 .values-body {
   background-color: rgb(108, 0, 209);
 }
@@ -30,4 +35,9 @@ body {
 
 .selector-for-some-widget {
   box-sizing: content-box;
+}
+
+#linkedin {
+  width: 40px;
+  height: 30px;
 }
