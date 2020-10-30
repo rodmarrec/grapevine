@@ -1,23 +1,25 @@
-/*
-font-family: "Staatliches", cursive;
-
-*/
+/* STUB all */
 
 body {
-  background-color: rgb(108, 0, 209);
+  background-color: rgba(245, 245, 245, 0.952);
 }
 
-/* .navbar-font {
-  font-family: "Staatliches", cursive;
-} */
 
-#logo-name {
-  color: #7534ca;
+
+/* STUB navbar */
+
+#navbar-logo {
+  width: 40px;
+  height: 30px;
 }
 
-.main {
-  min-height: 80vh;
+#headers-color {
+  background-color: rgb(108, 0, 209)
 }
+
+
+
+/*STUB Landing Page */
 
 .jumbotron-body {
   background-color: rgba(245, 245, 245, 0.952);
@@ -37,7 +39,36 @@ body {
   box-sizing: content-box;
 }
 
+
+
+/*STUB Profile Page */
+
+.card-profile-img {
+  display: block;
+  margin: 0 auto;
+  width: 250px;
+  border-radius: 50%;
+  border: 15px solid rgba(245, 245, 245, 0.952);
+}
+
+.card-profile-body {
+  margin: 0;
+  height: auto;
+  font-family: Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* STUB Footer */
+
 #linkedin {
-  width: 40px;
+  width: 30px;
   height: 30px;
+}
+
+.main {
+  min-height: 80vh;
 }

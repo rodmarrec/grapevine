@@ -1,0 +1,103 @@
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(108, 0, 209);
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: #fff;
+    width: 250px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card__profile {
+    width: 100%;
+    position: relative;
+}
+
+.card__profile span {
+    font-size: 12px;
+    position: absolute;
+    right: 20px;
+    top: -10px;
+}
+
+.card__profile img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    border-radius: 50%;
+    border: 5px solid #72d292;
+}
+
+.card__profile h1 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.card__description {
+    background-color: #f1f1f1;
+    padding-top: 15px;
+}
+
+.card__description ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.card__description li {
+    margin: 0 3px;
+    color: lightgrey;
+}
+
+.card__description .filled {
+    color: goldenrod;
+}
+
+.card__description p {
+    text-align: center;
+}
+
+.card__pricing {
+    text-align: center;
+}
+
+.card__pricing h3 {
+    margin: 25px 0 5px;
+}
+
+.card__pricing p {
+    margin: 0 0 25px;
+}
+
+.card__contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card__contact button {
+    border: none;
+    color: white;
+    padding: 15px 0;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.card__contact button:first-child {
+    background-color: #5bcb7e;
+}
+
+.card__contact button:nth-child(2) {
+    background-color: #50b571;
+}
