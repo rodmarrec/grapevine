@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const inviteSchema = new mongoose.Schema(
-    {
-        introduction: { type: String, required: false },       
+const messageSchema = new mongoose.Schema({
+        content: { type: String, required: 
+            [true, "You must enter message. 200 characters max"] },       
     },
     {
         timestamps: true,
@@ -11,6 +11,6 @@ const inviteSchema = new mongoose.Schema(
 );
 
 
-const Invite = mongoose.model("Invite", inviteSchema);
+const Message = mongoose.model("Message", messageSchema);
 
-module.exports = Invite;
+module.exports = Message;
