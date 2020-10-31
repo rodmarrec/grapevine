@@ -8,7 +8,7 @@ const db = require("../models");
 router.get("/", (req, res) => {
     db.Message.find({}, (error, allMessagesFromDB) => {
         if(error) {
-            console.log("error:", error);
+            console.log("error in message#index:", error);
         } else {
             res.render("message-pages/index", {
                 allMessages: allMessagesFromDB
@@ -19,9 +19,22 @@ router.get("/", (req, res) => {
 
 
 // new route
-router.get("/newMessage", (req, res) => {
+router.get("/new", (req, res) => {
     res.render("message-pages/new");
 });
+
+// create route
+router.post("/", (req, res) => {
+    db.Message.create(req.body, (error, createdMessageInDB) => {
+        if(error) {
+            console.log("error in message#create:", error);
+        } else {
+            console.log(req.body)
+            console.lof(createdMessageInDB);
+            res.redirect("/messages")
+        }
+    })
+})
 
 
 module.exports = router;
