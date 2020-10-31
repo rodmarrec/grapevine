@@ -51,14 +51,14 @@ const authRequried = function (req, res, next) {
 
 //// views routes
 
-// home (landing) page route
+// home (landing-page) page route
 app.get("/", (req, res) => {
-    res.render("landing",{ user: req.session.currentUser });
+    res.render("landing-page",{ user: req.session.currentUser });
 });
 
 // profile page route
 app.get("/profile", (req, res) => {
-    res.render("profile/home",{ user: req.session.currentUser });
+    res.render("index.ejs",{ user: req.session.currentUser });
 });
 
 // search all profiles route
@@ -68,7 +68,7 @@ app.get("/search", (req, res) => {
 
 // mailbox page route
 app.get("/mailbox", (req, res) => {
-    res.render("invitation/mailbox",{ user: req.session.currentUser });
+    res.render("message/mailbox",{ user: req.session.currentUser });
 });
 
 
@@ -76,8 +76,8 @@ app.get("/mailbox", (req, res) => {
 //// auth routes
 app.use("/", routes.auth);
 
-//invitation auth routes
-app.use("/invitations", routes.invitation);
+//message auth routes
+app.use("/messages", routes.message);
 
 // profile routes - base url for profile resource
 app.use("/profile", routes.profile);

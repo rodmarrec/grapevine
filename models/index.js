@@ -23,6 +23,6 @@ mongoose
 
 module.exports = {
     Profile: require("./Profile"),
-    Invitation: require("./Invitation"),
+    message: require("./message"),
     User: require("./User")
 };

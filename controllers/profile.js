@@ -25,7 +25,7 @@ const index = (req, res) => {
 //show
 const show = (req, res) => {
         db.Profile.findById(req.params.id)
-        .populate("invitations")
+        .populate("messages")
         .exec((error, foundProfile) => {
             if (error) {
                 console.log("Error in profile#show:", error);
@@ -35,7 +35,7 @@ const show = (req, res) => {
             Profile: foundProfile 
         };
 
-        res.render("profile/home", context);
+        res.render("index.ejs", context);
     });
 };
 
@@ -51,7 +51,7 @@ const create = (req, res) => {
             profile: newProfile,
         };
 
-        res.render("profile/home", context);
+        res.render("index.ejs", context);
     });
 };
 
@@ -65,7 +65,7 @@ const update = (req, res) => {
                 return res.send("Error in profile#update:", error);
             }
     
-            res.redirect(`/profile/home/${updatedProfile._id}`);
+            res.redirect(`/index.ejs/${updatedProfile._id}`);
         }
     );
 };
@@ -78,13 +78,13 @@ const destroy = (req, res) => {
             console.log("Error in profile#destroy:", error);
             return res.send("Error in profile#destroy:", error);
         }
-        db.Invitation.deleteOne({ profile: deletedProfile._id }, (error, removedInvitations) => {
+        db.message.deleteOne({ profile: deletedProfile._id }, (error, removedmessages) => {
             if (error) {
-                console.log("Error in profile-Invitation#destroy:", error);
-                return res.send("Error in profile-Invitation#destroy:", error);
+                console.log("Error in profile-message#destroy:", error);
+                return res.send("Error in profile-message#destroy:", error);
             }
 
-            res.redirect("/landing");
+            res.redirect("/landing-page");
         });
     });
 };

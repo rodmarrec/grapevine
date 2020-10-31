@@ -2,42 +2,42 @@ const express = require("express");
 const router = express.Router();
 
 const db = require("../models")
-const { findByIdAndUpdate } =  require("../models/Invitation");
+const { findByIdAndUpdate } =  require("../models/message");
 
-// base route is /invitations
+// base route is /messages
 
 
 // index
 const index = (req, res) => {
-    db.Invitation.find({}, (error, foundInvitations) => {
+    db.message.find({}, (error, foundmessages) => {
         if (error) {
-            console.log("Error in invitation#index:", error);
+            console.log("Error in message#index:", error);
         }
-        if(!foundInvitations.length) {
-            console.log("message: No invitations found");
-            return res.send("message: No invitations found");
+        if(!foundmessages.length) {
+            console.log("message: No messages found");
+            return res.send("message: No messages found");
         }
         const context = {
-            invitations: foundInvitations,
+            messages: foundmessages,
         };
 
-        res.render("invitations/mailbox", context);
+        res.render("messages/mailbox", context);
     });
 };
 
 
 //show
 const show = (req, res) => {
-        db.Invitation.findById(req.params.id, (error, foundInvitation) => {
+        db.message.findById(req.params.id, (error, foundmessage) => {
         if (error) {
-            console.log("Error in invitation#show:", error);
-            return res.send("Error in invitation#show:", error);
+            console.log("Error in message#show:", error);
+            return res.send("Error in message#show:", error);
         }
         const context = { 
-            invitation: foundInvitation 
+            message: foundmessage 
         };
 
-        res.render(`invitations/mailbox/${foundInvitation._id}`, context);
+        res.render(`messages/mailbox/${foundmessage._id}`, context);
     });
 };
 
@@ -45,21 +45,21 @@ const show = (req, res) => {
 // create
 const create = (req, res) => {
     console.log(req.body);
-    db.Invitation.create(req.body, (error, createdInvitation) => {
+    db.message.create(req.body, (error, createdmessage) => {
         if (error) {
-            console.log("Error in invitation#create:", error);
-            return res.send("Error in invitation#create:", error);
+            console.log("Error in message#create:", error);
+            return res.send("Error in message#create:", error);
         }
         db.Profile.findById(req.body.profile, function (error, foundProfile) {
             if (error) {
-                console.log("Error in Invitation-Profile#create:", error);
-                return res.send("Error in Invitation-Profile#create:", error);
+                console.log("Error in message-Profile#create:", error);
+                return res.send("Error in message-Profile#create:", error);
             }
             console.log("profile found:", foundProfile);
-            foundProfile.Invitations.push(createdInvitation);
+            foundProfile.messages.push(createdmessage);
             foundProfile.save();
     
-            res.redirect("invitations/mailbox");
+            res.redirect("messages/mailbox");
         });
     });
 };
@@ -67,37 +67,37 @@ const create = (req, res) => {
 
 // update
 const update = (req, res) => {
-    db.Invitation.findByIdAndUpdate(req.params.id, req.body, { new: true }, (
-        error, updatedInvitation) => {
+    db.message.findByIdAndUpdate(req.params.id, req.body, { new: true }, (
+        error, updatedmessage) => {
         if (error) {
-            console.log("Error in invitation#update:", error);
-            return res.send("Error in invitation#update:", error);
+            console.log("Error in message#update:", error);
+            return res.send("Error in message#update:", error);
         }
 
-        res.redirect(`/invitations/${updatedInvitation._id}`);
+        res.redirect(`/messages/${updatedmessage._id}`);
     });
 };
 
 
 // delete
 const destroy = (req, res) => {
-    db.Invitation.findByIdAndDelete(req.params.id, (error, deletedInvitation)=> {
+    db.message.findByIdAndDelete(req.params.id, (error, deletedmessage)=> {
         if (error) {
-            console.log("Error in invitation#destroy:", error);
-            return res.send("Error in invitation#destroy:", error);
+            console.log("Error in message#destroy:", error);
+            return res.send("Error in message#destroy:", error);
         }
     
-        db.Profile.findById(deletedInvitation.profile, function (error, foundProfile) {
+        db.Profile.findById(deletedmessage.profile, function (error, foundProfile) {
             if (error) {
-                console.log("Error in invitation-Profile#destroy:", error);
-                return res.send("Error in invitation-Profile#destroy:", error);
+                console.log("Error in message-Profile#destroy:", error);
+                return res.send("Error in message-Profile#destroy:", error);
             }
             
             console.log("profile found:", foundProfile);
-            foundProfile.invitations.remove(deletedInvitation);
+            foundProfile.messages.remove(deletedmessage);
             foundProfile.save();
     
-            res.redirect(`/invitations/${deletedInvitation.profile}`);
+            res.redirect(`/messages/${deletedmessage.profile}`);
         });
     });
 };

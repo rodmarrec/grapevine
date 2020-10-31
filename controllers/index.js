@@ -1,5 +1,5 @@
 module.exports = {
     profile: require("./profile"),
-    invitation: require("./invitation"),
+    message: require("./message"),
     auth: require("./auth"),
 };

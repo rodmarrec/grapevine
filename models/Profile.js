@@ -15,16 +15,16 @@ const profileSchema = new mongoose.Schema(
         network: [
             {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: "Invitation"
+                ref: "message"
             },
         ],
-        invitationIn: [
+        messageIn: [
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "Profile"
             },
         ],
-        invitationOut: [
+        messageOut: [
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "Profile"
