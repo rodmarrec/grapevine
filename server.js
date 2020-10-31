@@ -14,6 +14,7 @@ const app = express();
 
 // configuration
 const PORT = 4000;
+app.set("view engine", "ejs");
 
 
 // Middleware
@@ -25,7 +26,15 @@ app.use((req, res, next) => {
     next();
 })
 
-app.use("/message", messageController);
+
+// view routes
+app.get("/", (req, res) => {
+    res.render("landing-page");
+})
+
+
+// message routes
+app.use("/messages", messageController);
 
 
 // Server Listener

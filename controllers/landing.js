@@ -4,5 +4,8 @@ const db = require("../models");
 
 // starting route is /grapevine
 
-// route for index
-router.get("/")
+
+// index route
+router.get("/home", (req, res) => {
+    
+})
