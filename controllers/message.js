@@ -10,11 +10,17 @@ router.get("/", (req, res) => {
         if(error) {
             console.log("error:", error);
         } else {
-            res.render("profile-pages/index.ejs", {
+            res.render("message-pages/index", {
                 allMessages: allMessagesFromDB
             });
         }
     });
+});
+
+
+// new route
+router.get("/newMessage", (req, res) => {
+    res.render("message-pages/new");
 });
 
 

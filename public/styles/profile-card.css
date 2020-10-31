@@ -1,103 +1,133 @@
-
-
 body {
-    margin: 0;
-    height: 100vh;
-    background-color: rgb(108, 0, 209);
-    font-family: Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #f9f9fa
+}
+
+.padding {
+    padding: 3rem !important
+}
+
+.user-card-full {
+    overflow: hidden
 }
 
 .card {
-    background-color: #fff;
-    width: 250px;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.card__profile {
-    width: 100%;
-    position: relative;
-}
-
-.card__profile span {
-    font-size: 12px;
-    position: absolute;
-    right: 20px;
-    top: -10px;
-}
-
-.card__profile img {
-    display: block;
-    margin: 0 auto;
-    width: 100px;
-    border-radius: 50%;
-    border: 5px solid #72d292;
-}
-
-.card__profile h1 {
-    font-size: 20px;
-    text-align: center;
-}
-
-.card__description {
-    background-color: #f1f1f1;
-    padding-top: 15px;
-}
-
-.card__description ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.card__description li {
-    margin: 0 3px;
-    color: lightgrey;
-}
-
-.card__description .filled {
-    color: goldenrod;
-}
-
-.card__description p {
-    text-align: center;
-}
-
-.card__pricing {
-    text-align: center;
-}
-
-.card__pricing h3 {
-    margin: 25px 0 5px;
-}
-
-.card__pricing p {
-    margin: 0 0 25px;
-}
-
-.card__contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.card__contact button {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
     border: none;
-    color: white;
-    padding: 15px 0;
-    font-size: 26px;
-    cursor: pointer;
+    margin-bottom: 30px
 }
 
-.card__contact button:first-child {
-    background-color: #5bcb7e;
+.m-r-0 {
+    margin-right: 0px
 }
 
-.card__contact button:nth-child(2) {
-    background-color: #50b571;
+.m-l-0 {
+    margin-left: 0px
+}
+
+.user-card-full .user-profile {
+    border-radius: 5px 0 0 5px
+}
+
+.bg-c-lite-green {
+    background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
+    background: linear-gradient(to right, #ee5a6f, #f29263)
+}
+
+.user-profile {
+    padding: 20px 0
+}
+
+.card-block {
+    padding: 1.25rem
+}
+
+.m-b-25 {
+    margin-bottom: 25px
+}
+
+.img-radius {
+    border-radius: 5px
+}
+
+h6 {
+    font-size: 14px
+}
+
+.card .card-block p {
+    line-height: 25px
+}
+
+@media only screen and (min-width: 1400px) {
+    p {
+        font-size: 14px
+    }
+}
+
+.card-block {
+    padding: 1.25rem
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0
+}
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+.card .card-block p {
+    line-height: 25px
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.text-muted {
+    color: #919aa3 !important
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0
+}
+
+.f-w-600 {
+    font-weight: 600
+}
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+.user-card-full .social-link li {
+    display: inline-block
+}
+
+.user-card-full .social-link li a {
+    font-size: 20px;
+    margin: 0 10px 0 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
 }
