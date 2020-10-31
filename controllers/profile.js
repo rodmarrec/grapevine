@@ -17,7 +17,7 @@ const index = (req, res) => {
             profiles: foundProfiles,
         };
 
-        res.render("profiles/show-all", context);
+        res.render("profile/show-all", context);
     });
 };
 
@@ -35,7 +35,7 @@ const show = (req, res) => {
             Profile: foundProfile 
         };
 
-        res.render(`profile/home/${foundProfile._id}`, context);
+        res.render("profile/home", context);
     });
 };
 
@@ -51,7 +51,7 @@ const create = (req, res) => {
             profile: newProfile,
         };
 
-        res.render(`profile/home/${newProfile._id}`, context);
+        res.render("profile/home", context);
     });
 };
 

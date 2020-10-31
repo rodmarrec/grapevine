@@ -1,0 +1,15 @@
+
+
+<ul>
+    <% profiles.forEach(profile => { %>
+    <li>
+        <a href="/profiles/<%= profile._id %>"> <%= profile.name %> </a>
+    </li>
+    <% }) %>
+</ul>
+<% if(profiles.length === 0) { %>
+<p>
+    There are no profiles yet! Be the first to share what profile you are
+    having and what you think of it.
+</p>
+<% }%>

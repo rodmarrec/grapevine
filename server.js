@@ -51,7 +51,7 @@ const authRequried = function (req, res, next) {
 
 //// views routes
 
-// landing page route
+// home (landing) page route
 app.get("/", (req, res) => {
     res.render("landing",{ user: req.session.currentUser });
 });
@@ -77,10 +77,10 @@ app.get("/mailbox", (req, res) => {
 app.use("/", routes.auth);
 
 //invitation auth routes
-app.use("/invitations", authRequried, routes.invitation);
+app.use("/invitations", routes.invitation);
 
-// profile routes
-app.use("/profile", authRequried, routes.profile);
+// profile routes - base url for profile resource
+app.use("/profile", routes.profile);
 
 
 
