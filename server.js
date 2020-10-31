@@ -5,7 +5,7 @@ const methodOverride = require("method-override");
 
 
 // Internal
-const messageController = require("method-override");
+const messageController = require("./controllers/message");
 
 
 // Instanced
@@ -19,7 +19,7 @@ app.set("view engine", "ejs");
 
 // Middleware
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use((req, res, next) => {
     console.log(`${req.method} ${req.originalUrl}`);
