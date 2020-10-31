@@ -65,7 +65,29 @@ router.get("/:id/edit", (req, res) => {
 });
 
 // update route
+router.put("/:id", (req, res) => {
+    db.Message.findByIdAndUpdate({ _id: req.params.id }, req.body, 
+        { new: true }, (error, updatedMessage) => {
+            if(error) {
+                console.log("error in message#update:", error);
+            } else {
+                console.log(updatedMessage);
+                res.redirect(`/messages/${ req.params.id }`);
+            }
+    });
+});
 
+
+// delete route
+router.delete("/:id", (req, res) => {
+    db.Message.findByIdAndDelete(req.params.id, (error, foundMessage) => {
+        if(error) {
+            console.log("error in message#delete:", error);
+        } else {
+            res.redirect("/messages");
+        }
+    });
+});
 
 
 module.exports = router;
