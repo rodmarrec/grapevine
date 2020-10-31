@@ -33,8 +33,39 @@ router.post("/", (req, res) => {
             console.lof(createdMessageInDB);
             res.redirect("/messages")
         }
-    })
-})
+    });
+});
+
+
+// show route
+router.get("/:id", (req, res) => {
+    db.Message.findById(req.params.id, (error, foundMessage) => {
+        if(error) {
+            console.log("error in message#show:", error);
+        } else {
+            res.render("message-pages/show", {
+                foundMessage: foundMessage
+            });
+        }
+    });
+});
+
+
+// edit route
+router.get("/:id/edit", (req, res) => {
+    db.Message.findById(req.params.id, (error, foundMessage) => {
+        if(error) {
+            console.log("error in message#edit:", error);
+        } else {
+            res.render("message-pages/edit", {
+                foundMessage: foundMessage
+            });
+        }
+    });
+});
+
+// update route
+
 
 
 module.exports = router;
