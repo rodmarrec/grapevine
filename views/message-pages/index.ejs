@@ -14,32 +14,9 @@
     
     <!-- STUB main -->
     <main class="main">
-        mailbox
-        <h3 class="label">No messages yet?</h3>
-        <a href="/messages/new">Create Message</a>
 
-
-        <ul class="">
-            <li>
-                <a>
-                    Are you up to date with your messages?
-                    <strong class="has-text-white">Check one out. </strong>
-                </a>
-                <ul>
-                    <% allMessages.forEach(message => { %>
-                    <li>
-                    <a href="/messages/<%= message._id %>"> <%= message.content%> </a>
-                    </li>
-                    <% }) %>
-                </ul>
-                <% if(allMessages.length === 0) { %>
-                <p>
-                    You have no messages!
-                </p>
-                <% }%>
-            </li>
-        </ul>
-
+        <!-- STUB list messages -->
+        <%- include ("../0-partials/message/index-message.ejs") -%>
 
 
     </main>

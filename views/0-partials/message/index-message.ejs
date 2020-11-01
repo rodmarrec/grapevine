@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="card shadow-lg ml-5 mt-4" 
+            style="width: 40rem;">
+
+            <!-- STUB card header -->
+            <div class="card-header alert alert-info">
+                <h3 class="label">Mailbox</h3>
+                <hr class="my-4">
+                <a href="/messages/new">
+                    Create New Post
+                </a>
+            </div>
+        
+            <!-- STUB list messages -->
+            <ul class="">
+                <li>
+                    <a>
+                        Are you up to date with your messages?
+                        <strong class="has-text-white">Check one out. </strong>
+                    </a>
+                    <ul>
+                        <% allMessages.forEach(message => { %>
+                        <li>
+                        <a href="/messages/<%= message._id %>"> <%= message.content%> </a>
+                        </li>
+                        <% }) %>
+                    </ul>
+                    <% if(allMessages.length === 0) { %>
+                    <p>
+                        You have no messages!
+                    </p>
+                    <% }%>
+                </li>
+            </ul>
+            
+            
+        </div>
+    </div>
+</div>
