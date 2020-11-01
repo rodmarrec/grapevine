@@ -8,37 +8,24 @@ const { findByIdAndUpdate } =  require("../models/Profile");
 
 
 // index
-const index = (req, res) => {
-    db.Profile.find({}, (error, foundProfiles) => {
-        if (error) {
-            console.log("Error in profile#index:", error);
-        }
-        const context = {
-            profiles: foundProfiles,
-        };
+router.get("/", (req, res) => {
+    // db.Profile.find({}, (error, foundProfiles) => {
+    //     if (error) {
+    //         console.log("Error in profile#index:", error);
+    //     }
+    //     const context = {
+    //         profiles: foundProfiles,
+    //     };
 
-        res.render("profile/show-all", context);
-    });
-};
+        res.render("profile-pages/index");
+    // });
+});
 
 
-//show
-const show = (req, res) => {
-        db.Profile.findById(req.params.id)
-        .populate("messages")
-        .exec((error, foundProfile) => {
-            if (error) {
-                console.log("Error in profile#show:", error);
-                return res.send("Error in profile#show:", error);
-            }
-        const context = { 
-            Profile: foundProfile 
-        };
-
-        res.render("index.ejs", context);
-    });
-};
-
+// new route
+router.get("/new", (req, res) => {
+    res.render("profile-pages/index");
+});
 
 //create
 const create = (req, res) => {
@@ -51,13 +38,44 @@ const create = (req, res) => {
             profile: newProfile,
         };
 
-        res.render("index.ejs", context);
+        res.render("profile-pages/index", context);
     });
 };
 
 
+//show
+router.get("/:id", (req, res) => {
+    db.Profile.findById(req.params.id)
+    .populate("messages")
+    .exec((error, foundProfile) => {
+        if (error) {
+            console.log("Error in profile#show:", error);
+            return res.send("Error in profile#show:", error);
+        }
+    const context = { 
+        Profile: foundProfile 
+    };
+
+    res.render("profile-pages/index", context);
+});
+});
+
+
+// edit route
+router.get("/:id/edit", (req, res) => {
+    db.Profile.findById(req.params.id, (error, foundProfile) => {
+        if(error) {
+            console.log("error in profile#edit:", error);
+        } else {
+            res.render("profile-pages/edit", {
+                foundProfile: foundProfile
+            });
+        }
+    });
+});
+
 // update
-const update = (req, res) => {
+router.put("/:id", (req, res) => {
         db.Profile.findByIdAndUpdate (req.params.id, req.body, { new: true }, ( 
             error, updatedProfile) => {
             if (error) {
@@ -65,14 +83,14 @@ const update = (req, res) => {
                 return res.send("Error in profile#update:", error);
             }
     
-            res.redirect(`/index.ejs/${updatedProfile._id}`);
+            res.redirect("profile-pages/index");
         }
     );
-};
+});
 
 
 // delete
-const destroy = (req, res) => {
+router.delete("/:id", (req, res) => {
     db.Profile.findByIdAndDelete(req.params.id, (error, deletedProfile) => {
         if (error) {
             console.log("Error in profile#destroy:", error);
@@ -84,16 +102,10 @@ const destroy = (req, res) => {
                 return res.send("Error in profile-message#destroy:", error);
             }
 
-            res.redirect("/landing-page");
+            res.redirect("profile-pages/index");
         });
     });
-};
+});
 
 
-module.exports = {
-    index,
-    show,
-    create,
-    update,
-    destroy,
-}
+module.exports = router;

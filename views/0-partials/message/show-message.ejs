@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+                
+        <!-- STUB Header -->
+        <div class="card shadow-lg ml-5 mt-4 rounded" 
+            style="width: 40rem;">
+            <div class="card-header alert alert-info">
+                New Message
+            </div>
+            <div class="card-body">                
+                <form action="/messages" 
+                method="POST">
+                    <textarea class="form-control" 
+                        name="content" 
+                        placeholder="Type in your message" 
+                        rows="3" 
+                        style="margin-bottom:30px;">
+                    </textarea>
+                    <h6 class="pull-right" 
+                        id="counter">
+                        300 characters max.
+                    </h6>
+                    
+                    <!-- STUB new message button -->
+                    <button type="submit" 
+                        class="btn btn-sm btn-info">
+                        Post!
+                    </button>
+
+                    <!-- STUB cancel button -->
+                    <a href="/messages" 
+                        class="btn btn-sm btn-secondary"> 
+                        Cancel
+                    </a>
+                </form>
+            </div>
+        </div>
+            
+	</div>
+</div>
+

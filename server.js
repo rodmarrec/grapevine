@@ -6,7 +6,7 @@ const methodOverride = require("method-override");
 
 // Internal
 const messageController = require("./controllers/message");
-
+const profileController = require("./controllers/profile");
 
 // Instanced
 const app = express();
@@ -25,7 +25,7 @@ app.use((req, res, next) => {
     console.log(`${req.method} ${req.originalUrl}`);
     next();
 })
-
+app.use(express.json());
 
 // view routes
 app.get("/", (req, res) => {
@@ -35,6 +35,9 @@ app.get("/", (req, res) => {
 
 // message routes
 app.use("/messages", messageController);
+
+// profile routes
+app.use("/profile", profileController);
 
 
 // Server Listener
