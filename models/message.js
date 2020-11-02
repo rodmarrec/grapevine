@@ -1,7 +1,12 @@
 const mongoose = require("mongoose");
 
-const messageSchema = new mongoose.Schema({
-        content: { type: String},       
+const messageSchema = new mongoose.Schema(
+    {
+        jobTitle: { type: String, required: true },
+        company: { type: String, required: true },
+        location: { type: String, required: true},
+        link: { type: String, required: true },
+        content: { type: String, required: false },       
     },
     {
         timestamps: true,
