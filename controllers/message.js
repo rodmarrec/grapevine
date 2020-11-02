@@ -1,20 +1,20 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
-const { findByIdAndUpdate } = require("../models/Message");
+// const { findByIdAndUpdate } = require("../models/message");
 
 // starting route is /messages
 
 
 // index route
 router.get("/", (req, res) => {
-    db.Message.find({}, (error, foundMessages) => {
+    db.Message.find({}, (error, foundmessages) => {
         if(error) {
             console.log("error in message#index:", error);
             return res.send(error);
         } 
         const context = { 
-            allMessages: foundMessages 
+            allMessages: foundmessages 
         }
         res.render("message-pages/index", context);
     });
@@ -43,12 +43,12 @@ router.post("/", (req, res) => {
 
 // show route
 router.get("/:id", (req, res) => {
-    db.Message.findById(req.params.id, (error, foundMessage) => {
+    db.Message.findById(req.params.id, (error, foundmessage) => {
         if(error) {
             console.log("error in message#show:", error);
         }
         const context = { 
-            foundMessage: foundMessage 
+            foundmessage: foundmessage 
         }
         res.render("message-pages/show", context);
         
@@ -58,12 +58,12 @@ router.get("/:id", (req, res) => {
 
 // edit route
 router.get("/:id/edit", (req, res) => {
-    db.Message.findById(req.params.id, (error, foundMessage) => {
+    db.Message.findById(req.params.id, (error, foundmessage) => {
         if(error) {
             console.log("error in message#edit:", error);
         } else {
             res.render("message-pages/edit", {
-                foundMessage: foundMessage
+                foundmessage: foundmessage
             });
         }
     });
@@ -85,7 +85,7 @@ router.put("/:id", (req, res) => {
 
 // delete route
 router.delete("/:id", (req, res) => {
-    db.Message.findByIdAndDelete(req.params.id, (error, foundMessage) => {
+    db.Message.findByIdAndDelete(req.params.id, (error, foundmessage) => {
         if(error) {
             console.log("error in message#delete:", error);
         } else {

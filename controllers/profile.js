@@ -93,13 +93,13 @@ router.put("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
     db.Profile.findByIdAndDelete(req.params.id, (error, deletedProfile) => {
         if (error) {
-            console.log("Error in profile#destroy:", error);
-            return res.send("Error in profile#destroy:", error);
+            console.log("Error in profile#delete:", error);
+            return res.send("Error in profile#delete:", error);
         }
-        db.message.deleteOne({ profile: deletedProfile._id }, (error, removedmessages) => {
+        db.Message.deleteOne({ profile: deletedProfile._id }, (error, removedMessages) => {
             if (error) {
-                console.log("Error in profile-message#destroy:", error);
-                return res.send("Error in profile-message#destroy:", error);
+                console.log("Error in profile-message#delete:", error);
+                return res.send("Error in profile-message#delete:", error);
             }
 
             res.redirect("profile-pages/index");

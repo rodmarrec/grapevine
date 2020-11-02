@@ -15,7 +15,7 @@ const profileSchema = new mongoose.Schema(
         network: [
             {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: "message"
+                ref: "Msessage"
             },
         ],
         messageIn: [

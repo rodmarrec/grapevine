@@ -5,20 +5,25 @@
 
             <!-- STUB card header -->
             <div class="card-header alert alert-info">
-                <h3 class="label">Mailbox</h3>
-                <hr class="my-4">
-                <a href="/messages/new">
-                    Create New Post
+                <h3 class="label">Messages</h3>
+                
+                <a href="/messages/new" class="btn btn-sm btn-info">
+                    Create New Message
                 </a>
+                
+            
             </div>
         
             <!-- STUB list messages -->
-            <ul class="">
+            <ul >
                 <li>
-                    <a>
-                        Are you up to date with your messages?
-                        <strong class="has-text-white">Check one out. </strong>
-                    </a>
+                    <p>
+                        Stay up to date with what everyone's talking about. 
+                        <br />
+                        <strong>
+                            Check a job message out! 
+                        </strong>
+                    </p>
                     <ul>
                         <% allMessages.forEach(message => { %>
                         <li>
