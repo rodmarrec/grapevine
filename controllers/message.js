@@ -86,6 +86,7 @@ router.put("/:id", (req, res) => {
 // delete route
 router.delete("/:id", (req, res) => {
     db.Message.findByIdAndDelete(req.params.id, (error, deletedMessage) => {
+        console.log(deletedMessage)
         if(error) {
             console.log("error in message#delete:", error);
         } 
