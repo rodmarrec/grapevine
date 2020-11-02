@@ -1,8 +1,4 @@
 
-<!-- 
-Bootstrap 3.0.0 Snippet base by msurguy
-https://bootsnipp.com/snippets/9gW
--->
 
 <div class="container">
     <div class="row">
@@ -11,14 +7,16 @@ https://bootsnipp.com/snippets/9gW
         <div class="card shadow-lg ml-5 mt-4 rounded" 
             style="width: 40rem;">
             <div class="card-header alert alert-info">
-                New Post
+                Update Post
             </div>
-            <div class="card-body">                
-                <form action="/messages" 
-                method="POST">
+            <div class="card-body">   
+                
+                
+                <form action="/messages/<%= foundMessage._id%>?_method=PUT"  
+                    method="POST">
                     <textarea class="form-control" 
                         name="content" 
-                        placeholder="Type in your message" 
+                        placeholder="new message" 
                         rows="3" 
                         style="margin-bottom:30px;">
                     </textarea>
@@ -29,11 +27,11 @@ https://bootsnipp.com/snippets/9gW
                     <!-- STUB new message button -->
                     <button type="submit" 
                         class="btn btn-sm btn-info">
-                        Create Post
+                        Update Post
                     </button>
 
                     <!-- STUB cancel button -->
-                    <a href="/messages" 
+                    <a href="/messages/<%= foundMessage._id%>" 
                         class="btn btn-sm btn-secondary"> 
                         Cancel
                     </a>

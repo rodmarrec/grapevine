@@ -5,39 +5,40 @@
 
             <!-- STUB card header -->
             <div class="card-header alert alert-info">
-                <h3 class="label">Messages</h3>
+                <h3 class="label">Job Posts</h3>
                 
                 <a href="/messages/new" class="btn btn-sm btn-info">
-                    Create New Message
+                    Create New Post
                 </a>
                 
             
             </div>
         
             <!-- STUB list messages -->
-            <ul >
-                <li>
-                    <p>
-                        Stay up to date with what everyone's talking about. 
-                        <br />
-                        <strong>
-                            Check a job message out! 
-                        </strong>
-                    </p>
-                    <ul>
-                        <% allMessages.forEach(message => { %>
-                        <li>
-                        <a href="/messages/<%= message._id %>"> <%= message.content%> </a>
+            <form class="card-body">
+                <p>
+                    Stay up to date with what everyone's talking about. 
+                    <br />
+                    <strong>
+                        Check a job post out.
+                    </strong>
+                </p>
+                <ul class="list-group">
+                    <% allMessages.forEach(message => { %>
+                        <li class="list-group-item">
+                            <a href="/messages/<%= message._id %>"> 
+                                <%= message.content%> 
+                            </a>
                         </li>
-                        <% }) %>
-                    </ul>
+                    <% }) %>
+                </ul>
+                <p>
                     <% if(allMessages.length === 0) { %>
-                    <p>
                         You have no messages!
-                    </p>
                     <% }%>
-                </li>
-            </ul>
+                </p>
+            
+            </form>
             
             
         </div>

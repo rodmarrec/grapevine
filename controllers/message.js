@@ -8,13 +8,13 @@ const db = require("../models");
 
 // index route
 router.get("/", (req, res) => {
-    db.Message.find({}, (error, foundmessages) => {
+    db.Message.find({}, (error, foundMessages) => {
         if(error) {
             console.log("error in message#index:", error);
             return res.send(error);
         } 
         const context = { 
-            allMessages: foundmessages 
+            allMessages: foundMessages 
         }
         res.render("message-pages/index", context);
     });
@@ -43,12 +43,12 @@ router.post("/", (req, res) => {
 
 // show route
 router.get("/:id", (req, res) => {
-    db.Message.findById(req.params.id, (error, foundmessage) => {
+    db.Message.findById(req.params.id, (error, foundMessage) => {
         if(error) {
             console.log("error in message#show:", error);
         }
         const context = { 
-            foundmessage: foundmessage 
+            foundMessage: foundMessage 
         }
         res.render("message-pages/show", context);
         
@@ -58,14 +58,14 @@ router.get("/:id", (req, res) => {
 
 // edit route
 router.get("/:id/edit", (req, res) => {
-    db.Message.findById(req.params.id, (error, foundmessage) => {
+    db.Message.findById(req.params.id, (error, foundMessage) => {
         if(error) {
             console.log("error in message#edit:", error);
-        } else {
-            res.render("message-pages/edit", {
-                foundmessage: foundmessage
-            });
         }
+        const context = {
+            foundMessage: foundMessage
+        }
+            res.render("message-pages/edit", context);
     });
 });
 
@@ -85,12 +85,11 @@ router.put("/:id", (req, res) => {
 
 // delete route
 router.delete("/:id", (req, res) => {
-    db.Message.findByIdAndDelete(req.params.id, (error, foundmessage) => {
+    db.Message.findByIdAndDelete(req.params.id, (error, deletedMessage) => {
         if(error) {
             console.log("error in message#delete:", error);
-        } else {
-            res.redirect("/messages");
-        }
+        } 
+        res.redirect("/messages");
     });
 });
 
