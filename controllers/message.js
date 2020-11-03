@@ -1,12 +1,41 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
-// const { findByIdAndUpdate } = require("../models/message");
-
-// starting route is /messages
 
 
-// index route
+// base route is /messages
+
+
+/*  ANCHOR
+jobRole routes 
+(Message model prop) 
+route is "/messages/c"
+*/
+router.get("/messages/c", async (req, res) => {
+    try {
+        const foundJobPosts = await db.Message.find({ jobRole: req.params.jobRole });
+        const allJobRoles = await db.Message.distinct( "jobRole" );
+        const context = {
+            posts: foundJobPosts,
+            jobCategories: allJobRoles,
+        };
+        res.render("jobcategory-pages/index", context);
+    } catch (error) {
+        // req.flash("error:", error);
+        return res.redirect("/messages");
+    }
+});
+
+
+
+
+
+/* ANCHOR
+message routes
+(Message model)
+*/
+
+// message index route
 router.get("/", (req, res) => {
     db.Message.find({}, (error, foundMessages) => {
         if(error) {
@@ -17,16 +46,19 @@ router.get("/", (req, res) => {
             allMessages: foundMessages 
         }
         res.render("message-pages/index", context);
+        return
     });
 });
 
 
-// new route
+
+
+// message new route
 router.get("/new", (req, res) => {
     res.render("message-pages/new");
 });
 
-// create route
+// message create route
 router.post("/", (req, res) => {
     console.log(req)
     db.Message.create(req.body, (error, createdMessage) => {
@@ -41,7 +73,7 @@ router.post("/", (req, res) => {
 });
 
 
-// show route
+// message show route
 router.get("/:id", (req, res) => {
     db.Message.findById(req.params.id, (error, foundMessage) => {
         if(error) {
@@ -56,7 +88,7 @@ router.get("/:id", (req, res) => {
 });
 
 
-// edit route
+// message edit route
 router.get("/:id/edit", (req, res) => {
     db.Message.findById(req.params.id, (error, foundMessage) => {
         if(error) {
@@ -69,7 +101,7 @@ router.get("/:id/edit", (req, res) => {
     });
 });
 
-// update route
+// message update route
 router.put("/:id", (req, res) => {
     db.Message.findByIdAndUpdate({ _id: req.params.id }, req.body, 
         { new: true }, (error, updatedMessage) => {
@@ -83,7 +115,7 @@ router.put("/:id", (req, res) => {
 });
 
 
-// delete route
+// message delete route
 router.delete("/:id", (req, res) => {
     db.Message.findByIdAndDelete(req.params.id, (error, deletedMessage) => {
         console.log(deletedMessage)

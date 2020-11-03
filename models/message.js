@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const messageSchema = new mongoose.Schema(
     {
-        jobTitle: { type: String, required: true, minlength: 2, maxlength: 50 },
+        jobRole: { type: String, required: true, minlength: 2, maxlength: 50 },
         company: { type: String, required: true, minlength: 2, maxlength: 40 },
         location: { type: String, required: true, minlength: 2, maxlength: 50},
         link: { type: String, required: true, unique: 
