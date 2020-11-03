@@ -1,27 +1,35 @@
 <div class="container">
     <div class="row">
         <div class="card shadow-lg ml-5 mt-4" 
-            style="width: 50rem;">
+            style="width: 45rem;">
 
             <!-- STUB card header -->
             <div class="card-header alert alert-info">
                 <h3 class="label">Job Posts</h3>
                 
                 <a href="/messages/new" class="btn btn-sm btn-info">
-                    Create New Post
+                    Share New Post
                 </a>
-                
-            
             </div>
         
-            <!-- STUB list messages -->
+            <!-- STUB job post header -->
             <form class="card-body">
                 <h6>
                     Stay up to date with what everyone's talking about.
                 </h6>
-                <br />
-                    Check out a job post. If you see something worth noting, have information on the company, or position, then add a note to help other users!
+                    Check out a job post or share something new!
                 </p>
+
+                <!-- STUB if there are no posts -->
+                <hr class="my-2"/>
+                <p>
+                    <% if(allMessages.length === 0) { %>
+                        There are no posts. Get Postin'! 
+                    <% }%>
+                </p>
+                
+
+                <!-- STUB job post list-->
                 <ul class="list-group">
                     <% allMessages.forEach(message => { %>
                         <li class="list-group-item">
@@ -36,12 +44,8 @@
                         </li>
                     <% }) %>
                 </ul>
-                <hr class="my-2"/>
-                <p>
-                    <% if(allMessages.length === 0) { %>
-                        There are no posts. Get Postin'! 
-                    <% }%>
-                </p>
+
+
             
             </form>
             

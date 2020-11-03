@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
             users: foundUser,
             // user: req.session.currentUser,
         }
-        res.render("user-pages/profile", context);
+        res.render("user-pages/index", context);
     } catch (error) {
         console.log("error in user#index:", error);
         // req.flash("error:", error);
@@ -53,7 +53,7 @@ router.get("/:id", (req, res) => {
                 thisUser: foundUser,
                 // user: req.session.currentUser
             };
-            res.render("user-pages/profile", context)
+            res.render("user-pages/index", context)
     });
 });
 
@@ -66,7 +66,7 @@ router.get("/:id/edit", (req, res) => {
             return res.send(error);
         }
         const context = { 
-            user: foundUser 
+            foundUser: foundUser 
         };
         res.render("user-pages/edit", context)
     });

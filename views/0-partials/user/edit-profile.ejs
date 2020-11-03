@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+                
+        <!-- STUB Header -->
+        <div class="card shadow-lg ml-5 mt-4 rounded" 
+            style="width: 40rem;">
+            <h4 class="card-header alert alert-info">
+                Edit Profile
+            </h4>
+            <div class="card-body">   
+                
+                <form action="/user/<%= user._id%>?_method=PUT" method="POST">
+
+                    <!-- STUB username param -->
+                    <div class="form-group user-edit-form">
+                        <img src="<%= user.profilePic %>" 
+                            style="width:200px;height:200px;" />
+                    </div>
+                    <div class="form-group">
+                            <label>
+                                Username - cannot be changed
+                            </label>
+                            <input type="text" 
+                                class="form-control" 
+                                placeholder="<%= user.username %>" 
+                                disabled />
+                        </div>
+                        <div class="form-group">
+                        <label>
+                            Upload Profile Picture here - URL ONLY
+                        </label>
+                        <input type="url" 
+                            class="form-control" 
+                            name="profilePic" 
+                            value="<%= user.profilePic %>" />
+                    </div class="my-4">
+                    
+                    <!-- STUB new message button -->
+                    <button type="submit" 
+                        class="btn btn-sm btn-info">
+                        Update Post
+                    </button>
+
+                    <!-- STUB cancel button -->
+                    <a href="/messages/<%= foundMessage._id%>" 
+                        class="btn btn-sm btn-secondary"> 
+                        Cancel
+                    </a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
