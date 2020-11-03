@@ -3,20 +3,18 @@ const router = express.Router();
 const db = require("../models");
 
 
-// base route is /messages
-
 
 /*  ANCHOR
 jobRole routes 
 (Message model prop) 
-route is "/messages/c"
+route is "/c"
 */
-router.get("/messages/c", async (req, res) => {
+router.get("/c", async (req, res) => {
     try {
         const foundJobPosts = await db.Message.find({ jobRole: req.params.jobRole });
         const allJobRoles = await db.Message.distinct( "jobRole" );
         const context = {
-            posts: foundJobPosts,
+            jobPosts: foundJobPosts,
             jobCategories: allJobRoles,
         };
         res.render("jobcategory-pages/index", context);
@@ -33,6 +31,7 @@ router.get("/messages/c", async (req, res) => {
 /* ANCHOR
 message routes
 (Message model)
+route is /messages
 */
 
 // message index route

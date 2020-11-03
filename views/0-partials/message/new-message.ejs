@@ -10,21 +10,96 @@ https://bootsnipp.com/snippets/9gW
         <!-- STUB Header -->
         <div class="card shadow-lg ml-5 mt-4 rounded" 
             style="width: 40rem;">
-            <div class="card-header alert alert-info">
-                New Post
-            </div>
+            <h4 class="card-header alert alert-info">
+                New Job post
+            </h4>
 
             <!-- STUB form body -->
             <div class="card-body">                
                 <form action="/messages" 
                 method="POST">
-                    <textarea class="form-control" 
-                        name="content" 
-                        rows="3" 
-                        style="margin-bottom:30px;"></textarea>
-                    <h6 class="pull-right">
-                        300 characters max.
-                    </h6>
+
+                    <!-- STUB jobRole param -->
+                    <p>
+                        <label for="jobRole">
+                            Job Title:
+                        </label>
+                        <input type="jobRole" 
+                            class="form-control" 
+                            name="jobRole" 
+                            placeholder="i.e. Full Stack Engineer">
+                        <small id="emailHelp" 
+                            class="form-text text-muted">
+                            required
+                        </small>
+                    </p>
+
+                    <!-- STUB company param -->
+                    <p>
+                        <label for="company">
+                            Company:
+                        </label>
+                        <input type="company" 
+                            class="form-control" 
+                            name="company" 
+                            placeholder="i.e. Grapevine">
+                        <small id="emailHelp" 
+                            class="form-text text-muted">
+                            required
+                        </small>
+                    </p>
+
+                    <!-- STUB location param -->
+                    <p>
+                        <label for="location">
+                            Location:
+                        </label>
+                        <input type="location" 
+                            class="form-control" 
+                            name="location" 
+                            placeholder="i.e. Remote">
+                        <small id="emailHelp" 
+                            class="form-text text-muted">
+                            required
+                        </small>
+                    </p>
+
+                    <!-- STUB link param -->
+                    <p>
+                        <label for="link">
+                            Link:
+                        </label>
+                        <input type="link" 
+                            class="form-control" 
+                            name="link" 
+                            placeholder="i.e. https://www.linkedin.com/jobs/view/2232803481">
+                        <small id="emailHelp" 
+                            class="form-text text-muted">
+                            required
+                        </small>
+                    </p>
+
+                    <!-- STUB content param -->
+                    <p>
+                        <label for="content">
+                            Thoughts:
+                        </label>
+                        <textarea class="form-control" 
+                            name="content" 
+                            rows="3" 
+                            placeholder="Tell us why you're sharing this job post!"
+                            style="margin-bottom:30px;"></textarea>
+                        
+                        <h6 class="pull-right">
+                            300 characters max.
+                        </h6>
+                        <small id="emailHelp" 
+                            class="form-text text-muted">
+                            optional
+                        </small>
+                    </p>
+                    <hr class="my-4" />
+                    
                     
                     <!-- STUB new message button -->
                     <button type="submit" 
@@ -38,8 +113,11 @@ https://bootsnipp.com/snippets/9gW
                         Cancel
                     </a>
                 </form>
+                
             </div>
         </div>
             
 	</div>
 </div>
+
+<br /><br />

@@ -6,22 +6,33 @@
         <!-- STUB Header -->
         <div class="card shadow-lg ml-5 mt-4 rounded" 
             style="width: 40rem;">
-            <div class="card-header alert alert-info">
-                Update Post
-            </div>
+            <h4 class="card-header alert alert-info">
+                Edit this post's thoughts
+            </h4>
             <div class="card-body">   
                 
-                
-                <form action="/messages/<%= foundMessage._id%>?_method=PUT"  
-                    method="POST">
-                    <textarea class="form-control" 
-                        name="content" 
-                        placeholder="new message" 
-                        rows="3" 
-                        style="margin-bottom:30px;"></textarea>
-                    <h6 class="pull-right">
-                        300 characters max.
-                    </h6>
+                <form action="/messages/<%= foundMessage._id%>?_method=PUT" method="POST">
+
+                    <!-- STUB content param -->
+                    <p>
+                        <label for="content">
+                            Thoughts:
+                        </label>
+                        <textarea class="form-control" 
+                            name="content" 
+                            rows="3" 
+                            placeholder="Tell us why you're sharing this job post!"
+                            style="margin-bottom:30px;"></textarea>
+                        
+                        <h6 class="pull-right">
+                            300 characters max.
+                        </h6>
+                        <small id="emailHelp" 
+                            class="form-text text-muted">
+                            optional
+                        </small>
+                    </p>
+                    <hr class="my-4" />
                     
                     <!-- STUB new message button -->
                     <button type="submit" 

@@ -3,20 +3,73 @@
                 
         <!-- STUB Header -->
         <div class="card shadow-lg ml-5 mt-4 rounded " 
-            style="width: 40rem;">
+            style="width: 50rem;">
             <div class="card-header alert alert-info">
-                Post Information
-            </div>
-
-            <!-- STUB message content -->
-            <div class="card-body">                
+            
+                <!-- STUB message createdAt -->               
                 <p>
-                    Content: <br>
+                    <strong> 
+                        Shared on Grapevine on:     
+                    </strong>
+                    <br /> 
+                    <%= foundMessage.createdAt %>
+                </p>
+            </div>  
+
+            <div class="card-body">
+
+                <!-- STUB jobRole param -->               
+                <p>
+                    <strong> 
+                        Job Title:   
+                    </strong> 
+                    <br />
+                    <%= foundMessage.jobRole %>
+                </p>
+
+                <!-- STUB company param -->               
+                <p>
+                    <strong> 
+                        Company:  
+                    </strong> 
+                    <br />
+                    <%= foundMessage.company %>
+                </p>
+
+                <!-- STUB location param -->               
+                <p>
+                    <strong> 
+                        Location:     
+                    </strong>
+                    <br /> 
+                    <%= foundMessage.location %>
+                </p>
+
+                <!-- STUB link param -->               
+                <p>
+                    <strong> 
+                        Link:     
+                    </strong>
+                    <br /> 
+                    <a href="<%= foundMessage.link %>">
+                        <%= foundMessage.link %>
+                    </a>
+                </p>
+
+                <!-- STUB content param -->               
+                <p>
+                    <strong> 
+                        Thoughts:     
+                    </strong>
+                    <br /> 
                     <%= foundMessage.content %>
                 </p>
+
+                <hr class="my-4" />
+
                 
                 <!-- STUB new message button -->
-                <div class=" p-2">
+                <div>
                     <a href="/messages/<%= foundMessage._id %>/edit" 
                         class="btn btn-sm btn-info">
                         Edit Message
@@ -30,7 +83,9 @@
 
                     <!-- STUB delete button -->
                     <form action="/messages/<%= foundMessage._id %>?_method=DELETE" method="POST">
-                        <input type="submit" class="btn btn-sm btn-danger pull-right" value="Delete" />
+                        <input type="submit" 
+                            class="btn btn-sm btn-danger pull-right" 
+                            value="Delete" />
                     </form>
                 </div>
                 

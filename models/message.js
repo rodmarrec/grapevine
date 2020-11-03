@@ -10,7 +10,7 @@ const messageSchema = new mongoose.Schema(
         link: { type: String, required: true, unique: 
             [true, "Post for this job already exists"] 
         },
-        content: { type: String, required: true, minlength: 20, maxlength: 1000 },       
+        content: { type: String, required: false, minlength: 2, maxlength: 300 },       
     },
     {
         timestamps: true,

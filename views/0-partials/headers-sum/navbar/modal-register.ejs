@@ -32,7 +32,7 @@
 
             <!--STUB register form  -->
             <form method="POST" 
-                action={% url 'register'%}>
+                action="/">
                 <div class="modal-body">
                     
 
@@ -46,6 +46,9 @@
                             minlength="2"
                             placeholder="name@email.com" 
                             required>
+                        <small id="emailHelp" class="form-text text-muted">
+                            We'll never share your email with anyone else.
+                        </small>
                     </p>
 
                     <!-- STUB password -->
@@ -75,14 +78,14 @@
                     <!-- STUB modal footer -->
                     <div class="modal-footer">
 
-                        <!--STUB Existing Member -->
-                        <p class="subtitle has-text-grey modal-dialog">
+                        <!--STUB Existing Member - (off) -->
+                        <!-- <p class="subtitle has-text-grey modal-dialog">
                             Already have an account?
                             <a href="/login" 
                                 class="button is-link">
                                 Log in
                             </a>
-                        </p>
+                        </p> -->
 
                         <!-- STUB close button -->
                         <button type="button" 
