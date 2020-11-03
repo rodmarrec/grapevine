@@ -49,17 +49,19 @@ body {
 
 
 .card-profile-img {
-
   margin: 30px auto;
   width: 60%;
   height: 60%;
   border-radius: 50%;
   border: 5px solid rgba(245, 245, 245, 0.952);
-
 }
 
 .profile-gradient {
   background: -webkit-gradient(linear, left top, right top, from(#ee5a6f), to(#f29263));
+}
+
+.card-profile-info {
+  color:  rgba(245, 245, 245, 0.952);
 }
 
 

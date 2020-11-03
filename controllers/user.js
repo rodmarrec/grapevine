@@ -24,19 +24,19 @@ router.get("/", async (req, res) => {
 });
 
 
-// new route
-router.get("/new", (req, res) => {
-    res.render("user/new")
-});
+// // new route
+// router.get("/new", (req, res) => {
+//     res.render("user/new")
+// });
 
 // create route
-router.post("/", (req, res) => {
+router.post("/register", (req, res) => {
     db.User.create(req.body, (error, createdUser) => {
         if(error) {
             console.log("error in user#create:", error);
             return res.send(error)
         }
-        res.redirect("/")
+        res.redirect("/login")
     });
 });
 
