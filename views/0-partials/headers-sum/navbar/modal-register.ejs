@@ -9,10 +9,10 @@
     <div class="modal-dialog" 
         role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header alert alert-info">
 
                 <!--STUB modal title -->
-                <h5 class="content has-text-centered">
+                <h5 class="content has-text-centered ">
                     Find your next opportunity through Grapevine
                 </h5>
                 <button type="button" 
@@ -25,83 +25,117 @@
                 </button>
             </div>
 
-            <!--STUB  error message-->
-            <!-- <div class="alert alert-danger" 
-                role="alert"> error
-            </div> -->
 
             <!--STUB register form  -->
             <form action="/user/register" 
                 method="POST">
                 <div class="modal-body">
+
+                    <!-- STUB username -->
+                    <p>
+                        <label for="username">
+                            Username:
+                        </label>
+                        <input type="username" 
+                            class="form-control" 
+                            name="username" 
+                            maxlength="25" 
+                            minlength="2" 
+                            required />
+                        <small id="emailHelp" 
+                            class="form-text text-muted">
+                            
+                        </small>
+                    </p>
                     
                     <!-- STUB email -->
                     <p>
-                        <label for="email">Email:</label>
+                        <label for="email">
+                            Email:
+                        </label>
                         <input type="email" 
                             class="form-control" 
                             name="email" 
                             maxlength="25" 
-                            minlength="2"
-                            placeholder="name@email.com" 
-                            required>
-                        <small id="emailHelp" class="form-text text-muted">
+                            minlength="2" 
+                            required />
+                        <small id="emailHelp" 
+                            class="form-text text-muted">
                             We'll never share your email with anyone else.
                         </small>
                     </p>
 
                     <!-- STUB password -->
                     <p>
-                        <label for="password">Password:</label>
+                        <label for="password">
+                            Password:
+                        </label>
                         <input type="password" 
                             class="form-control" 
                             name="password" 
                             maxlength="25" 
                             minlength="4"
-                            placeholder="required"
-                            required>
-                        <small id="emailHelp" class="form-text text-muted">
+                            required />
+                        <small id="emailHelp" 
+                            class="form-text text-muted">
                             25 characters max. 4 characters min required.
                         </small>
                     </p>
 
                     <!-- STUB confirm password -->
                     <p>
-                        <label for="password2">Confirm Password:</label>
+                        <label for="password2">
+                            Confirm Password:
+                        </label>
                         <input type="password" 
-                            class="form-control" 
-                            name="password2" 
+                            class="form-control mb-4" 
+                            name="password" 
                             maxlength="25" 
                             minlength="4"
-                            placeholder="Re-Enter Your Password" 
-                            required>
+                            placeholder="re-enter your password" 
+                            required />
                     </p>
 
                     <!-- STUB modal footer -->
                     <div class="modal-footer">
 
-                        <!--STUB Existing Member - (off) -->
-                        <!-- <p class="subtitle has-text-grey modal-dialog">
-                            Already have an account?
-                            <a href="/login" 
-                                class="button is-link">
-                                Log in
-                            </a>
-                        </p> -->
+                        <!-- STUB footer left -->
+                        <div class="pull-right">
 
-                        <!-- STUB close button -->
-                        <button type="button" 
-                            class="btn btn-secondary"
-                            data-dismiss="modal">
-                            Cancel
-                        </button>
+                            <!-- STUB checkbox -->
+                            <div class="checkbox mb-3">
+                                <label>
+                                    <input type="checkbox" 
+                                        value="accept-use" /> 
+                                    I accept the 
+                                    <a href="#">
+                                        Terms of Use
+                                    </a> 
+                                    &
+                                    <a href="#">
+                                        Privacy Policy
+                                    </a>
+                                </label>
+                            </div>
 
-                        <!-- STUB sign up button -->
-                        <button type="submit" 
-                            class="btn btn-info">
-                            Join
-                        </button>
-                        
+                        </div>
+
+                        <!-- STUB footer right -->
+                        <div class="pull-right">
+
+                            <!-- STUB close button -->
+                            <button type="button" 
+                                class="btn btn-secondary"
+                                data-dismiss="modal">
+                                Cancel
+                            </button>
+
+                            <!-- STUB sign up button -->
+                            <button type="submit" 
+                                class="btn btn-info">
+                                Join
+                            </button>
+                        </div>
                     </div>
 
 
