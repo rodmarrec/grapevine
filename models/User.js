@@ -6,6 +6,9 @@ const userSchema = new mongoose.Schema({
         email: { type: String, required: true, unique: true },
         password: { type: String, required: true },
         profilePic:  { type: String, default: "/public/assets/flaticon/user.svg"  },
+        jobRole: { type: String, required: false },
+        company: { type: String, required: false },
+        location: { type: String, required: false },
         messages: [
             {
                 type: mongoose.Schema.Types.ObjectId,

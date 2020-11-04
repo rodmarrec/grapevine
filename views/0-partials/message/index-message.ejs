@@ -34,7 +34,7 @@
                     <% allMessages.forEach(message => { %>
                         <li class="list-group-item">
                             <small>
-                                <%= message.createdAt%>
+                                <%= moment(message.createdAt).format("MMM Do YY") %>
                             </small>
                             <br/> 
                             <a href="/messages/<%= message._id %>"> 
