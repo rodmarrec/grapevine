@@ -36,9 +36,28 @@ router.post("/register", (req, res) => {
             console.log("error in user#create:", error);
             return res.send(error)
         }
-        res.redirect("/login")
+        res.redirect("/user/login")
     });
 });
+
+
+// login route
+router.post("/login", async (req, res) => {
+    try {
+        const foundUser = await db.User.findOne({ email: req.body.email });
+
+        if(!foundUser){                                                                     
+            console.log("User does not exist");
+            return res.redirect("/user/login");
+        }
+
+        res.redirect(`/user/${foundUser._id}`)
+    } catch(error) {
+        console.log("error in user#login:", error);
+    return res.redirect("/");
+    }
+})
+
 
 
 // show route
