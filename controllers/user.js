@@ -105,19 +105,20 @@ router.put("/:id", (req, res) => {
 
 //  delete route
 router.delete("/:id", (req, res) => {
-    db.User.findByIdAndDelete(req.params.id, (error, deletedUser) => {                                // remove posts after user is deleted, remove user's SubMessages
+    db.User.findByIdAndDelete(req.params.id, (error, deletedUser) => {                                
+        // remove posts after user is deleted, remove user's SubMessages
         if(error){
             console.log("error in user#delete:", error);
             return res.send(error);
         }
-        db.SubMessage.remove({user: deletedUser._id}, (error, removedSubMessages) => {
-            if(error){
-                console.log("error in user-Messages#delete", error);
-                return res.send(error);
-            }
-            req.session.destroy();
-            res.redirect("/")
-        });
+        // db.SubMessage.remove({user: deletedUser._id}, (error, removedSubMessages) => {
+        //     if(error){
+        //         console.log("error in user-Messages#delete", error);
+        //         return res.send(error);
+        //     }
+        //     req.session.destroy();
+                res.redirect("/")
+        // });
     });
 });
 

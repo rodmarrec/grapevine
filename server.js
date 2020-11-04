@@ -38,6 +38,7 @@ app.use((req, res, next) => {
     console.log(`${req.method} ${req.originalUrl}`);
     next();
 })
+app.locals.moment = require("moment");
 
 // app.use(express.session({
 //     resave: false,

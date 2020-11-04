@@ -1,97 +1,99 @@
 <div class="container">
     <div class="row">
+
+        <!-- STUB left-side col -->
+        <div class="col"></div>
+
+
+        <!-- STUB middle col -->
+        <div class="col-8">
                 
-        <!-- STUB Header -->
-        <div class="card shadow-lg ml-5 mt-4 rounded " 
-            style="width: 50rem;">
-            <div class="card-header alert alert-info">
-            
-                <!-- STUB message createdAt -->               
-                <p>
-                    <strong> 
-                        Shared on Grapevine on:     
-                    </strong>
-                    <br /> 
-                    <%= foundMessage.createdAt %>
-                </p>
-            </div>  
+            <!-- STUB Header -->
+            <div class="card shadow-lg ml-5 mt-4 rounded" 
+                style="width: 35rem;">
+                <div class="card-header alert alert-info">
+                
+                    <!-- STUB message createdAt -->               
+                    <p>
+                            Shared on Grapevine on:     
+                        <strong>
+                            <%= moment(foundMessage.createdAt).format("MMM Do YY") %>
+                        </strong>
+                    </p>
+                </div>  
 
-            <div class="card-body">
+                <div class="card-body">
 
-                <!-- STUB jobRole param -->               
-                <p>
-                    <strong> 
+                    <!-- STUB jobRole param -->               
+                    <p>
                         Job Title:   
-                    </strong> 
-                    <br />
-                    <%= foundMessage.jobRole %>
-                </p>
+                        <strong> 
+                            <%= foundMessage.jobRole %>
+                        </strong> 
+                    </p>
 
-                <!-- STUB company param -->               
-                <p>
-                    <strong> 
+                    <!-- STUB company param -->               
+                    <p>
                         Company:  
-                    </strong> 
-                    <br />
-                    <%= foundMessage.company %>
-                </p>
+                        <strong> 
+                            <%= foundMessage.company %>
+                        </strong> 
+                    </p>
 
-                <!-- STUB location param -->               
-                <p>
-                    <strong> 
-                        Location:     
-                    </strong>
-                    <br /> 
-                    <%= foundMessage.location %>
-                </p>
+                    <!-- STUB location param -->               
+                    <p> 
+                        Location:    
+                        <strong> 
+                            <%= foundMessage.location %>
+                        </strong> 
+                    </p>
 
-                <!-- STUB link param -->               
-                <p>
-                    <strong> 
-                        Link:     
-                    </strong>
-                    <br /> 
-                    <a href="<%= foundMessage.link %>">
-                        Link to posting
-                    </a>
-                </p>
+                    <!-- STUB link param -->               
+                    <p>
+                        <a href="<%= foundMessage.link %>">
+                            Link to posting
+                        </a>
+                    </p>
 
-                <!-- STUB content param -->               
-                <p>
-                    <strong> 
-                        Thoughts:     
-                    </strong>
-                    <br /> 
-                    <%= foundMessage.content %>
-                </p>
+                    <!-- STUB content param -->               
+                    <p>
+                        Thoughts:
+                        <br />     
+                        <%= foundMessage.content %>
+                    </p>
 
-                <hr class="my-4" />
+                    <hr class="my-4" />
 
-                
-                <!-- STUB new message button -->
-                <div>
-                    <a href="/messages/<%= foundMessage._id %>/edit" 
-                        class="btn btn-sm btn-info">
-                        Edit Message
-                    </a>
+                    
+                    <!-- STUB new message button -->
+                    <div>
+                        <a href="/messages/<%= foundMessage._id %>/edit" 
+                            class="btn btn-sm btn-info">
+                            Edit Message
+                        </a>
 
-                    <!-- STUB cancel button -->
-                    <a href="/messages" 
-                        class="btn btn-sm btn-secondary"> 
-                        Cancel
-                    </a>
+                        <!-- STUB cancel button -->
+                        <a href="/messages" 
+                            class="btn btn-sm btn-secondary"> 
+                            Cancel
+                        </a>
 
-                    <!-- STUB delete button -->
-                    <form action="/messages/<%= foundMessage._id %>?_method=DELETE" method="POST">
-                        <input type="submit" 
-                            class="btn btn-sm btn-danger pull-right" 
-                            value="Delete" />
-                    </form>
+                        <!-- STUB delete button -->
+                        <form action="/messages/<%= foundMessage._id %>?_method=DELETE" method="POST">
+                            <input type="submit" 
+                                class="btn btn-sm btn-danger pull-right" 
+                                value="Delete" />
+                        </form>
+                    </div>
+
                 </div>
                 
             </div>
+
         </div>
-            
+
+        <!-- STUB right-side col -->
+        <div class="col"></div>
 	</div>
 </div>
 
