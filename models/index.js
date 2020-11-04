@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
-const connectionString = "mongodb://localhost:27017/messages-db"
+// require("dotenv").config();
+const connectionString = "mongodb://localhost:27017/messages-db";
 
 // to fix all deprecation warnings in the MongoDB Node.js driver
 mongoose.connect(connectionString, {

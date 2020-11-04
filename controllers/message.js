@@ -70,6 +70,30 @@ router.post("/", (req, res) => {
 });
 
 
+// // create message route
+// router.post("/", async (req, res) => {
+//     try {
+//         const foundUser = await db.User.findById(req.body.user);
+//             console.log("message#create foundUser:", foundUser)
+
+//         // const username = foundUser.username;
+//         // req.body.username = username;
+//         //     console.log("message#create username:", req.body.username)
+
+//         const createdMessage = await db.Message.create(req.body);
+            
+//         // foundUser.messages.push(createdMessage);
+//         // await foundUser.messages.save();
+//         //     console.log("created message in user[]:", foundUser.messages)
+        
+//         res.redirect("/messages");
+//     } catch (error) {
+//         console.log("error in message#create:", error);
+//             return res.send(error);
+//     }
+// })
+
+
 // show message route
 router.get("/:id", (req, res) => {
     db.Message.findById(req.params.id, (error, foundMessage) => {
