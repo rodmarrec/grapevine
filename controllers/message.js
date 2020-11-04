@@ -50,14 +50,12 @@ router.get("/", (req, res) => {
 });
 
 
-
-
-// message new route
+// new message route
 router.get("/new", (req, res) => {
     res.render("message-pages/new");
 });
 
-// message create route
+// create message route
 router.post("/", (req, res) => {
     console.log(req)
     db.Message.create(req.body, (error, createdMessage) => {
@@ -72,7 +70,7 @@ router.post("/", (req, res) => {
 });
 
 
-// message show route
+// show message route
 router.get("/:id", (req, res) => {
     db.Message.findById(req.params.id, (error, foundMessage) => {
         if(error) {
@@ -87,7 +85,7 @@ router.get("/:id", (req, res) => {
 });
 
 
-// message edit route
+// edit message route
 router.get("/:id/edit", (req, res) => {
     db.Message.findById(req.params.id, (error, foundMessage) => {
         if(error) {
@@ -100,7 +98,7 @@ router.get("/:id/edit", (req, res) => {
     });
 });
 
-// message update route
+// update message route
 router.put("/:id", (req, res) => {
     db.Message.findByIdAndUpdate({ _id: req.params.id }, req.body, 
         { new: true }, (error, updatedMessage) => {
@@ -114,7 +112,7 @@ router.put("/:id", (req, res) => {
 });
 
 
-// message delete route
+// delete message route
 router.delete("/:id", (req, res) => {
     db.Message.findByIdAndDelete(req.params.id, (error, deletedMessage) => {
         console.log(deletedMessage)
