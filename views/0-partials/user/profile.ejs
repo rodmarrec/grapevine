@@ -13,10 +13,18 @@
             <div class="text-center">
                 <div class="container">
 
-                    <!-- STUB profile picture -->
+                    
                     <div class="card shadow-lg ml-5 mt-4 rounded profile-gradient" 
                         style="width: 20rem;">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png" 
+
+                        <!-- STUB edit button -->
+                        <a href="/user/<%= thisUser._id %>/edit" 
+                            class="btn btn-lg btn-info btn-block"> 
+                            Edit Profile
+                        </a>
+
+                        <!-- STUB profile picture -->
+                        <img src="<%= thisUser.profilePic %>" 
                             class="card-profile-img" 
                             alt="profile picture" />
                     
@@ -25,25 +33,24 @@
                             <h3 class="card-title my-2">
                                 <%= thisUser.username %> 
                             </h3>
-
-                            <h6 class="my-4">
-                                About
-                                <hr />
-                                <%= thisUser.jobRole %>   
-                                <br />
-                                <%= thisUser.company %> 
-                                <br />
-                                <%= thisUser.location %> 
-                            </h6>
+                            <hr class="my-3" />
+                            <h5 class="my-4">
                             <br />
+                            <%= thisUser.jobRole %>   
+                            <br />
+                            <%= thisUser.company %> 
+                            <br />
+                            <%= thisUser.location %> 
+                            </h5>
                             <br />
                         </div>
 
-                        <!-- STUB edit button -->
-                        <a href="/user/<%= thisUser._id %>/edit" 
-                            class="btn btn-lg btn-info btn-block"> 
-                            Edit Profile
-                        </a>
+                        <!-- STUB delete button -->
+                        <form action="/user/<%= thisUser._id %>?_method=DELETE" method="POST">
+                            <input type="submit" 
+                                class="btn btn-sm btn-danger btn-block" 
+                                value="Delete" />
+                        </form>
 
                     </div>
                 </div>

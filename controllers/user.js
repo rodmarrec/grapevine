@@ -93,6 +93,7 @@ router.get("/:id/edit", (req, res) => {
 
 // update route
 router.put("/:id", (req, res) => {
+    console.log(req.params, req.body)
     db.User.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedUser) => {
         if(error){
             console.log("error in user#update:", error);
