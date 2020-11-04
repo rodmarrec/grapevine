@@ -50,8 +50,8 @@ body {
 
 .card-profile-img {
   margin: 30px auto;
-  width: 60%;
-  height: 60%;
+  width: 50%;
+  height: 50%;
   border-radius: 50%;
   border: 5px solid rgba(245, 245, 245, 0.952);
 }
@@ -70,7 +70,7 @@ body {
 /* STUB Footer */
 
 #linkedin {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 

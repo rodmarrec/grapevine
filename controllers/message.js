@@ -7,7 +7,7 @@ const db = require("../models");
 /*  ANCHOR
 jobRole routes 
 (Message model prop) 
-route is "/c"
+route is "messages/c"
 */
 router.get("/c", async (req, res) => {
     try {

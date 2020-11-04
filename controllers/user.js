@@ -24,10 +24,10 @@ router.get("/", async (req, res) => {
 });
 
 
-// // new route
-// router.get("/new", (req, res) => {
-//     res.render("user/new")
-// });
+// new route
+router.get("/login", (req, res) => {
+    res.render("user-pages/login")
+});
 
 // create route
 router.post("/register", (req, res) => {
