@@ -14,13 +14,70 @@
                 <form action="/messages/<%= foundMessage._id %>?_method=PUT"
                     method="POST">
 
-                    <!-- STUB content param -->
                     <p>
+                        <!-- STUB jobRole -->
+                        <label>
+                            Job Title
+                        </label>
+                        <input type="text" 
+                            class="form-control" 
+                            name="jobRole"
+                            required
+                            placeholder="<%= foundMessage.jobRole %>" />
+                        <small>
+                            required.
+                        </small>
+                        <br /><br />
+
+                        <!-- STUB company -->
+                        <label>
+                            Company
+                        </label>
+                        <input type="text" 
+                            class="form-control" 
+                            name="company"
+                            required
+                            placeholder="<%= foundMessage.company %>" />
+                        <small>
+                            required.
+                        </small>
+                        <br /><br />
+
+                        <!-- STUB location -->
+                        <label>
+                            Location
+                        </label>
+                        <input type="text" 
+                            class="form-control" 
+                            name="location"
+                            required
+                            placeholder="<%= foundMessage.location %>" />
+                        <small>
+                            required.
+                        </small>
+                        <br /><br />
+
+                        <!-- STUB link -->
+                        <label>
+                            Link
+                        </label>
+                        <input type="text" 
+                            class="form-control" 
+                            name="link"
+                            required
+                            placeholder="<%= foundMessage.link %>" />
+                        <small>
+                            required.
+                        </small>
+                        <br /><br />
+
+                        <!-- STUB content -->
                         <label for="content">
                             Thoughts:
                         </label>
                         <textarea class="form-control" 
-                            name="content" 
+                            name="content"
+                            required 
                             rows="3" 
                             placeholder="Tell us why you're sharing this job post!"
                             style="margin-bottom:30px;"></textarea>
@@ -30,7 +87,7 @@
                         </h6>
                         <small id="emailHelp" 
                             class="form-text text-muted">
-                            optional
+                            required.
                         </small>
                     </p>
                     <hr class="my-4" />
